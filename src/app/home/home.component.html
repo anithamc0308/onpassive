@@ -1,0 +1,24 @@
+﻿<h1>Hi {{currentUser.firstName}}!</h1>
+<h3>All registered users:</h3>
+
+
+<table class="table table-striped table-dark">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Course</td>
+        <td>City</td>
+        <td>State</td>
+        <td>Country</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let user of users; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.courses}}</td>
+        <td>{{user.city}}</td>
+        <td>{{user.state}}</td>
+        <td>{{user.country}}</td>
+        <td><a (click)="deleteUser(user.id)" class="text-danger">Delete</a></td>
+    </tr>
+</table>
